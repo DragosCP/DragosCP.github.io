@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragos Panainte - AI & Product Leader</title>
+    <style>
+        /* Base styles */
+        :root {
+            --bg-color: #ffffff;
+            --bg-section: #f9fafb;
+            --bg-header: #f5f5f5;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --border-color: #d1d5db;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'SF Pro', 'Helvetica', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--bg-header);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--text-primary);
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 7rem 2rem 2rem;
+        }
+        
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        /* Hero section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 2rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            color: var(--text-secondary);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--text-primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--text-secondary);
+        }
+        
+        /* Experience section */
+        .experience-card {
+            background-color: var(--bg-section);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .experience-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-title h3 {
+            font-weight: 600;
+        }
+        
+        .experience-title span {
+            color: var(--text-secondary);
+        }
+        
+        .experience-company {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .experience-points {
+            list-style-position: inside;
+            margin-left: 0.5rem;
+        }
+        
+        .experience-points li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Skills section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            flex: 1 1 300px;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            background-color: var(--bg-section);
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        /* CV section */
+        .cv-container {
+            background-color: var(--bg-section);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--bg-header);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 4rem;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav ul li {
+                margin-left: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Dragos Panainte</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#vislock">Vislock</a></li>
+                    <li><a href="#gprpro">GPR Pro</a></li>
+                    <li><a href="#cv">CV</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero" id="about">
+            <h1>AI & Product Leader</h1>
+            <p>Product leader with expertise in AI systems and data-driven B2B SaaS products from concept to scale. Combines technical understanding of machine learning frameworks with product strategy to deliver measurable business impact. Passionate about responsible AI development with experience dating back to early neural network architectures.</p>
+            <a href="#cv" class="cta-button">View My CV</a>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-card">
+                <div class="experience-title">
+                    <h3>Co-founder & Product Leader</h3>
+                    <span>2019 - 2024</span>
+                </div>
+                <p class="experience-company">Vislock (Vision UK)</p>
+                <ul class="experience-points">
+                    <li>Led end-to-end product strategy for data-intensive B2B SaaS platform</li>
+                    <li>Implemented data-driven prioritization framework</li>
+                    <li>Established robust metrics system capturing business impact</li>
+                    <li>Created A/B testing methodology for key features</li>
+                    <li>Led integration of complex GIS mapping system</li>
+                </ul>
+                <a href="#vislock" class="cta-button" style="margin-top: 1rem">Learn More</a>
+            </div>
+            
+            <div class="experience-card">
+                <div class="experience-title">
+                    <h3>Data Manager</h3>
+                    <span>2022 - 2023</span>
+                </div>
+                <p class="experience-company">GPR PRO (Vision UK)</p>
+                <ul class="experience-points">
+                    <li>Led critical data analysis project at Hinkley Point Nuclear Plant</li>
+                    <li>Developed statistical analysis techniques for Ground Penetration Radar scan data</li>
+                    <li>Created transparent data tracking systems across multiple subcontractors</li>
+                    <li>Built automation scripts reducing data processing time by 33%</li>
+                    <li>Designed and implemented A/B testing methodology</li>
+                </ul>
+                <a href="#gprpro" class="cta-button" style="margin-top: 1rem">Learn More</a>
+            </div>
+            
+            <div class="experience-card">
+                <div class="experience-title">
+                    <h3>Data Integration Specialist</h3>
+                    <span>2015 - 2019</span>
+                </div>
+                <p class="experience-company">Vision UK</p>
+                <ul class="experience-points">
+                    <li>Served as voice of stakeholders to translate requirements into technical specifications</li>
+                    <li>Designed and implemented multi-level approval workflows</li>
+                    <li>Led technical integration of CAD/GIS file systems with version control</li>
+                    <li>Designed Augmented Reality implementations for geo-located data visualization</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="section-subtitle">AI/ML Tools</h3>
+                    <ul class="skill-list">
+                        <li>Langchain, CrewAI, Auto ML</li>
+                        <li>Python ML libraries, NLP frameworks</li>
+                        <li>Transformer architectures</li>
+                        <li>Neural networks, Machine Learning</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="section-subtitle">Development</h3>
+                    <ul class="skill-list">
+                        <li>Python, SQL, Flask, Docker</li>
+                        <li>API Development</li>
+                        <li>Cloud Platforms (Azure, AWS)</li>
+                        <li>Backend Systems, PHP</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="section-subtitle">Product Management</h3>
+                    <ul class="skill-list">
+                        <li>Agile/Scrum methodology</li>
+                        <li>Data Analytics, User Research</li>
+                        <li>A/B Testing, Metrics Frameworks</li>
+                        <li>Team Topologies, Roadmapping</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vislock Section -->
+        <section id="vislock">
+            <h2 class="section-title">Vislock: B2B SaaS Product Development</h2>
+            <p>Detailed case study on the development of Vislock, a data-intensive B2B SaaS platform for the construction and aviation industries.</p>
+            
+            <div class="experience-card">
+                <h3 class="section-subtitle">Business Impact</h3>
+                <ul class="experience-points">
+                    <li>68% reduction in approval process time</li>
+                    <li>£15K monthly administrative savings across client sites</li>
+                    <li>NPS improvement from -5 to +42 within 6 months</li>
+                    <li>280% ROI in first 2 years with 11:1 LTV:CAC ratio</li>
+                    <li>92% user retention rate with 78% weekly feature engagement</li>
+                </ul>
+            </div>
+            
+            <div class="experience-card">
+                <h3 class="section-subtitle">Product Strategy</h3>
+                <p>As Co-founder and Product Leader at Vislock from 2019 to 2024, I led the development of a B2B SaaS platform aimed at reducing utility service strikes in construction and aviation industries. The platform began as a digital permit workflow system and evolved to include GIS mapping functionality and mobile capabilities.</p>
+                <p>Key strategic decisions included:</p>
+                <ul class="experience-points">
+                    <li>Pivoting from agency to in-house development team to improve delivery</li>
+                    <li>Prioritizing offline capabilities over real-time collaboration, leading to 30% increase in user adoption</li>
+                    <li>Implementing weighted scoring system for feature prioritization based on revenue impact, roadmap alignment, development effort, and user value</li>
+                    <li>Expanding into GIS mapping integration after market analysis identified it as a critical need</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- GPR PRO Section -->
+        <section id="gprpro">
+            <h2 class="section-title">GPR PRO: Data Management at Nuclear Plant</h2>
+            <p>Case study on data analysis and process optimization at Hinkley Point Nuclear Plant.</p>
+            
+            <div class="experience-card">
+                <h3 class="section-subtitle">Project Background</h3>
+                <p>At Hinkley Point Nuclear Plant, I employed a strategic approach to identify gaps in project coordination as a Data Manager. The project involved managing and analyzing Ground Penetration Radar (GPR) scans of 10,000 concrete blocks to identify structural defects.</p>
+                <p>When I joined, the project was approximately 60-70% delivered, but roughly 60% of those deliverables were classified as "bad" results, leading to significant project delays.</p>
+            </div>
+            
+            <div class="experience-card">
+                <h3 class="section-subtitle">Solutions & Impact</h3>
+                <ul class="experience-points">
+                    <li>Created transparent documentation system for tracking scan processing status and issues</li>
+                    <li>Developed automation scripts that reduced data processing time by 33%</li>
+                    <li>Identified quality issues in data processing through statistical analysis</li>
+                    <li>Implemented A/B testing showing that 50% of "bad" results were inaccurate</li>
+                    <li>Reduced percentage of defective foundations from 60% to 32%</li>
+                    <li>Saved client approximately 2 years of remedial work and millions in project costs</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv">
+            <h2 class="section-title">Curriculum Vitae</h2>
+            
+            <div class="cv-container">
+                <!-- This will contain your full CV - similar to the one we created earlier -->
+                <h3 class="section-subtitle">Dragos Panainte</h3>
+                <p>UK • +447734732037 • dragos.panainte87@gmail.com • LinkedIn • GitHub</p>
+                
+                <h3 style="margin-top: 2rem;">AI & Technical Development | 2024 - Current</h3>
+                <p style="font-style: italic; color: var(--text-secondary);">Self-directed Professional Development</p>
+                <ul class="experience-points">
+                    <li>Advanced hands-on work with AI/ML technologies, focusing on NLP, Deep Learning, and LLM implementation</li>
+                    <li>Built Python-based API endpoints using Flask for AI service integration, containerized with Docker</li>
+                    <li>Implemented machine learning regression, classification, and clustering models</li>
+                    <li>Studied neural network architectures including RNNs and transformer models for NLP</li>
+                    <li>Completed Advanced Product Management courses focusing on AI product leadership</li>
+                </ul>
+                
+                <h3 style="margin-top: 2rem;">Vision (UK) | 2015-2024</h3>
+                <p style="font-style: italic; color: var(--text-secondary);">Co-founder & Product Leader | Vislock (2019 – 2024)</p>
+                <ul class="experience-points">
+                    <li>Led end-to-end product strategy for data-intensive B2B SaaS platform</li>
+                    <li>Implemented data-driven prioritization framework balancing revenue impact, technical feasibility, and user value</li>
+                    <li>Established robust metrics system capturing business impact and product performance</li>
+                    <li>Created A/B testing methodology for key features, resulting in 28% improvement in workflow completion rates</li>
+                    <li>Led integration of complex GIS mapping system</li>
+                    <li>Pivoted from external to in-house development team, establishing effective Agile processes</li>
+                </ul>
+                
+                <p style="margin-top: 1rem;"><strong>Business Impact:</strong></p>
+                <ul class="experience-points">
+                    <li>68% reduction in approval process time through optimized data workflows</li>
+                    <li>£15K monthly administrative savings across multiple client sites</li>
+                    <li>NPS improvement from -5 to +42 within 6 months of release</li>
+                    <li>280% ROI in first 2 years with 11:1 LTV:CAC ratio</li>
+                    <li>92% user retention rate with 78% weekly feature engagement</li>
+                </ul>
+                
+                <p style="margin-top: 2rem; font-style: italic; color: var(--text-secondary);">Data Manager | GPR PRO (2022 – 2023)</p>
+                <ul class="experience-points">
+                    <li>Led critical data analysis project at Hinkley Point Nuclear Plant</li>
+                    <li>Developed statistical analysis techniques to identify patterns in Ground Penetration Radar scan data</li>
+                    <li>Created transparent data tracking systems across multiple subcontractors and processing streams</li>
+                    <li>Built automation scripts reducing data processing time by 33% while improving quality control</li>
+                    <li>Designed and implemented A/B testing methodology that revealed 50% false positive rate in defective assessments</li>
+                    <li>Reduced percentage of defective foundations from 60% to 32%, saving approximately 2 years of remediation work</li>
+                </ul>
+                
+                <p style="margin-top: 2rem; font-style: italic; color: var(--text-secondary);">Data Integration Specialist (2015 – 2019)</p>
+                <ul class="experience-points">
+                    <li>Served as voice of stakeholders to translate complex requirements into technical specifications</li>
+                    <li>Designed and implemented multi-level approval workflows for document management systems</li>
+                    <li>Led technical integration of CAD/GIS file systems with version control capabilities</li>
+                    <li>Designed Augmented Reality implementations for geo-located data visualization</li>
+                    <li>Helped secure £1M project through innovative solutions combining 3D modeling and data visualization</li>
+                </ul>
+                
+                <h3 style="margin-top: 2rem;">Previous Experience</h3>
+                <p style="font-style: italic; color: var(--text-secondary);">Back-end Developer | BCODE (Romania) | 2012-2014</p>
+                <ul class="experience-points">
+                    <li>Developed custom eCommerce solutions using PHP, Laravel, and SQL</li>
+                    <li>Studied early machine learning frameworks including RNNs for NLP applications</li>
+                    <li>Built data processing pipelines and integration systems for small business clients</li>
+                </ul>
+                
+                <p style="margin-top: 1rem; font-style: italic; color: var(--text-secondary);">Sales / Merchandiser | Papillon (Romania) | 2007-2009</p>
+                
+                <h3 style="margin-top: 2rem;">Education</h3>
+                <p><strong>Technical University Gheorghe Asachi (Romania)</strong></p>
+                <p>Masters in Engineering (Erasmus Exchange Programme in France)</p>
+                
+                <h3 style="margin-top: 1rem;">Certificates</h3>
+                <ul class="experience-points">
+                    <li>REST API with Flask & Python</li>
+                    <li>Machine Learning Fundamentals</li>
+                    <li>Advanced Product Management: Vision, Strategy, Metrics</li>
+                </ul>
+                
+                <h3 style="margin-top: 1rem;">Languages</h3>
+                <p>Romanian (Native), English (Fluent), German, Italian</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <p>I'm currently open to new opportunities and would love to connect.</p>
+            <p style="margin: 2rem 0;">
+                <strong>Email:</strong> dragos.panainte87@gmail.com<br>
+                <strong>Phone:</strong> +447734732037<br>
+                <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dragospanainte/" style="color: var(--text-primary);">LinkedIn Profile</a><br>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Dragos Panainte. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
